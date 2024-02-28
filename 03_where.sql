@@ -1,5 +1,5 @@
--- where 
--- where 절은 특정 조건에 맞는 레코드만 선택하는데 사용되며, 
+-- WHERE 
+-- WHERE 절은 특정 조건에 맞는 레코드만 선택하는데 사용되며, 
 -- 다양한 방법으로 조건을 설정할 수 있다. 
 
 SELECT 
@@ -23,8 +23,9 @@ FROM
 WHERE
 	menu_price = 13000;
     
--- tbl_menu 테이블에서 메뉴 코드, 이름, 판매 상태를 조회할건데 
--- 판매 상태가 Y가 아닌 애들만 조회해줘 
+    
+    
+-- 메뉴 코드, 이름, 판매 상태를 / tbl_menu 테이블에서 / 판매 상태가 Y가 아닌 애들만 조회해줘 
 
 SELECT
 	menu_code,
@@ -36,7 +37,7 @@ WHERE
 	orderable_status != 'Y';
     -- ( !=, <> ) 부정
 
-    -- tbl_menu 에서 메뉴 코드, 이름, 가격을 조회할건데, 가격이 20000원 초과인 녀석들만 조회해줘
+    -- 메뉴 코드, 이름, 가격을 / tbl_menu 에서 / 가격이 20000원 초과인 녀석들만 조회해줘
 SELECT
 	menu_code,
     menu_name,
@@ -46,7 +47,7 @@ FROM
 WHERE
 	menu_price > 20000;
     
--- tbl_menu 테이블에서 메뉴 코드, 이름, 가격을 조회할건데 가격 10000원 이상 20000원 이하 조회해줘 
+-- 메뉴 코드, 이름, 가격을 / tbl_menu 테이블에서 / 가격 10000원 이상 20000원 이하 항목들을 조회해줘 
     
 SELECT
 	menu_code,
@@ -81,7 +82,7 @@ WHERE
 ORDER BY
 	category_code;
     
--- tbl_menu 에서 모든 컬럼을 조회하는데, 
+-- 모든 컬럼을 tbl_menu 에서 조회하는데, 
 -- 가격이 5000원이 넘거나 카테고리 코드가 10인 녀석들을 조회해줘
 SELECT
 	*
@@ -89,7 +90,8 @@ FROM
 	tbl_menu
 WHERE 
 	menu_price > 5000 
-    OR category_code = 10; 
+    OR 
+    category_code = 10; 
 
     
 -- (AND) 연산자
@@ -98,7 +100,7 @@ WHERE
 SELECT 1 AND 1;
 SELECT 1 AND 0, 0 AND 1, 0 AND 0;
 
--- tbl_menu 테이블에서 모든 컬럼을 조회하는데,
+-- 모든 컬럼을 tbl_menu 테이블에서 조회하는데,
 -- 판매상태가 y이면서 카테고리 코드가 10인 녀석들만 조회해줘
 
 SELECT
@@ -146,7 +148,7 @@ WHERE
 	menu_price NOT BETWEEN 10000 AND 20000;
 
 -- LIKE 연산자
--- tbl_menu 테이블에서 메뉴 이름, 가격을 조회하는데
+-- 메뉴 이름, 가격을 tbl_menu 테이블에서 조회하는데
 -- 메뉴 이름이 '마늘' 단어를 포함하고 있는 녀석들만 조회해줘 
 
 SELECT 
@@ -157,7 +159,7 @@ FROM
 WHERE 
 	menu_name LIKE '%마늘%';
     
--- tbl_menu 테이블에서 모든 컬럼을 조회하는데
+-- 모든 컬럼을 tbl_menu 테이블에서 조회하는데
 -- 가격이 5000원 넘으면서 카테고리 코드가 10이면서 '갈치' 단어를 포함하고 있는 녀석을 출력해줘
 
 SELECT
@@ -172,7 +174,7 @@ WHERE
 	menu_name LIKE '%갈치%';
     
 -- IN 연산자 활용
--- tbl_menu 테이블에서 메뉴 이름, 카테고리 코드 조회하는데
+-- 메뉴 이름, 카테고리 코드를 tbl_menu 테이블에서 조회하는데
 -- 카테고리 코드가 4, 5, 6인 애들을 조회해줘 
 
 SELECT 
